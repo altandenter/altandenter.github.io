@@ -1,6 +1,6 @@
 {
-  "name": "jakozavo",
-  "short_name": "jakozavo",
+  "name": "LukasApp",
+  "short_name": "LukasApp",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",
