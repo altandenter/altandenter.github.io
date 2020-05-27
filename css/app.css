@@ -181,3 +181,16 @@ app {
         display: block;
     }
 }
+
+pre {
+    color: #444;
+    border: solid 1px #ccc;
+    padding: 1em;
+    line-height: 24px;
+    font-size: 12px;
+    font-weight: bold;
+    background-image: linear-gradient(#e8e9d7 50%, #eff2ec 50%);    
+    font-family: Monaco, "Andale Mono", "Courier New", Courier, monospace;
+}
+
+
