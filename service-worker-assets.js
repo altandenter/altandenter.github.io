@@ -61,7 +61,7 @@
       "url": "img\/blogpost001_folderstructure.png"
     },
     {
-      "hash": "sha256-TNPx+tts3LIDXao9VfiXxv5w0dO6pBoHTE3kZyZBl4Y=",
+      "hash": "sha256-lN+qk6WRSWerKMqs\/imMWfmfmuUMalOTQKlJB8YwL\/E=",
       "url": "index.html"
     },
     {
