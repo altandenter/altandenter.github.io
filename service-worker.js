@@ -14,12 +14,12 @@ const offlineAssetsExclude = [ /^service-worker\.js$/ ];
 async function onInstall(event) {
     console.info('Installing Service Worker');
 
-    // Fetch and cache all matching items from the assets manifest
-    const assetsRequests = self.assetsManifest.assets
-        .filter(asset => offlineAssetsInclude.some(pattern => pattern.test(asset.url)))
-        .filter(asset => !offlineAssetsExclude.some(pattern => pattern.test(asset.url)))
-        .map(asset => new Request(asset.url, { integrity: asset.hash }));
-    await caches.open(cacheName).then(cache => cache.addAll(assetsRequests));
+    // // Fetch and cache all matching items from the assets manifest
+    // const assetsRequests = self.assetsManifest.assets
+    //     .filter(asset => offlineAssetsInclude.some(pattern => pattern.test(asset.url)))
+    //     .filter(asset => !offlineAssetsExclude.some(pattern => pattern.test(asset.url)))
+    //     .map(asset => new Request(asset.url, { integrity: asset.hash }));
+    // await caches.open(cacheName).then(cache => cache.addAll(assetsRequests));
 }
 
 async function onActivate(event) {
@@ -31,6 +31,13 @@ async function onActivate(event) {
         .filter(key => key.startsWith(cacheNamePrefix) && key !== cacheName)
         .map(key => caches.delete(key)));
 }
+
+self.addEventListener('fetch', event => {
+    // You can add custom logic here for controlling whether to use cached data if offline, etc.
+    // The following line opts out, so requests go directly to the network as usual.
+    return null;
+});
+
 
 // async function onFetch(event) {
 //     let cachedResponse = null;
