@@ -5,6 +5,10 @@
       "url": ".gitattributes"
     },
     {
+      "hash": "sha256-47DEQpj8HBSa+\/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
+      "url": ".nojekyll"
+    },
+    {
       "hash": "sha256-I7osLLIEh4e1Hz42HiUpxHyj7+8Svj7P\/3xcKd6f7SA=",
       "url": "css\/app.css"
     },
