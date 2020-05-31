@@ -1,6 +1,10 @@
 ﻿self.assetsManifest = {
   "assets": [
     {
+      "hash": "sha256-Cgdy8Dsy\/IR9lZ35uGWZmPZOza2l8CjvZP75EYpIejg=",
+      "url": ".gitattributes"
+    },
+    {
       "hash": "sha256-I7osLLIEh4e1Hz42HiUpxHyj7+8Svj7P\/3xcKd6f7SA=",
       "url": "css\/app.css"
     },
