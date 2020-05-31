@@ -1,7 +1,7 @@
 
 (function () {
     window.disqus = {
-        showDisqus: function (elementId, urlPart, pageIdentifier) {
+        show: function (elementId, urlPart, pageIdentifier) {
 
             var disqus_config = function () {
                 this.page.url = "https://altandenter.github.io/" + urlPart;
