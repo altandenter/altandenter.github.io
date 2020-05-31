@@ -4,7 +4,7 @@
 self.importScripts('./service-worker-assets.js');
 self.addEventListener('install', event => event.waitUntil(onInstall(event)));
 self.addEventListener('activate', event => event.waitUntil(onActivate(event)));
-self.addEventListener('fetch', event => event.respondWith(onFetch(event)));
+// self.addEventListener('fetch', event => event.respondWith(onFetch(event)));
 
 const cacheNamePrefix = 'offline-cache-';
 const cacheName = `${cacheNamePrefix}${self.assetsManifest.version}`;
@@ -34,25 +34,25 @@ async function onActivate(event) {
         .map(key => caches.delete(key)));
 }
 
-// self.addEventListener('fetch', event => {
-//     // You can add custom logic here for controlling whether to use cached data if offline, etc.
-//     // The following line opts out, so requests go directly to the network as usual.
-//     return null;
-// });
+self.addEventListener('fetch', event => {
+    // You can add custom logic here for controlling whether to use cached data if offline, etc.
+    // The following line opts out, so requests go directly to the network as usual.
+    return null;
+});
 
 
-async function onFetch(event) {
-    let cachedResponse = null;
-    if (event.request.method === 'GET') {
-        // For all navigation requests, try to serve index.html from cache
-        // If you need some URLs to be server-rendered, edit the following check to exclude those URLs
-        const shouldServeIndexHtml = event.request.mode === 'navigate';
+// async function onFetch(event) {
+//     let cachedResponse = null;
+//     if (event.request.method === 'GET') {
+//         // For all navigation requests, try to serve index.html from cache
+//         // If you need some URLs to be server-rendered, edit the following check to exclude those URLs
+//         const shouldServeIndexHtml = event.request.mode === 'navigate';
 
-        const request = shouldServeIndexHtml ? 'index.html' : event.request;
-        const cache = await caches.open(cacheName);
-        cachedResponse = await cache.match(request);
-    }
+//         const request = shouldServeIndexHtml ? 'index.html' : event.request;
+//         const cache = await caches.open(cacheName);
+//         cachedResponse = await cache.match(request);
+//     }
 
-    return cachedResponse || fetch(event.request);
-}
+//     return cachedResponse || fetch(event.request);
+// }
 /* Manifest version: 47DEQpj8 */
