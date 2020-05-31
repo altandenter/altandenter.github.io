@@ -61,7 +61,7 @@
       "url": "img\/map.png"
     },
     {
-      "hash": "sha256-fFKPhtm6Nh1PN0D9yuTx+wEd7lH8tcH8d4PjTYr9uFU=",
+      "hash": "sha256-AZYn1aje9KNo5LHkEUW6kzMxYDj0haYh9vt+PVqYGjg=",
       "url": "index.html"
     },
     {

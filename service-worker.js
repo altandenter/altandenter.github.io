@@ -13,7 +13,9 @@ const offlineAssetsExclude = [ /^service-worker\.js$/ ];
 
 async function onInstall(event) {
     console.info('Installing Service Worker');
-
+   
+    console.info('log self.assetsManifest.assets');
+    console.log(self.assetsManifest.assets)
     // Fetch and cache all matching items from the assets manifest
     // const assetsRequests = self.assetsManifest.assets
     //     .filter(asset => offlineAssetsInclude.some(pattern => pattern.test(asset.url)))
