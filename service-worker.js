@@ -33,15 +33,17 @@ async function onActivate(event) {
 }
 
 self.addEventListener('fetch', event => event.respondWith(onFetch(event)));
-self.addEventListener('fetch', event => {
-    // You can add custom logic here for controlling whether to use cached data if offline, etc.
-    // The following line opts out, so requests go directly to the network as usual.
-    return null;
-});
+// self.addEventListener('fetch', event => {
+//     // You can add custom logic here for controlling whether to use cached data if offline, etc.
+//     // The following line opts out, so requests go directly to the network as usual.
+//     return null;
+// });
 
 
 async function onFetch(event) {
+    console.log("onFetch")
     let cachedResponse = null;
+    console.log("event.request.method", event.request.method)
     if (event.request.method === 'GET') {
         // For all navigation requests, try to serve index.html from cache
         // If you need some URLs to be server-rendered, edit the following check to exclude those URLs
